@@ -8,5 +8,10 @@
         List<Kutya> kutyak = File.ReadAllLines("Kutyak.csv").Skip(1).Select(x => new Kutya(x, nevek, fajtak)).ToList();
 
         Console.WriteLine($"3. feladat: Kutyanevek száma: {nevek.Count}");
+
+        Console.WriteLine($"6. feladat: Kutyák átlag életkora: {kutyak.Average(x => x.Eletkor):f2}");
+
+        Kutya legidosebb = kutyak.Find(x => x.Eletkor == kutyak.Max(x => x.Eletkor));
+        Console.WriteLine($"7. feladat: Legidősebb kutya neve és fajtája: {legidosebb.Nev}, {legidosebb.Fajta}");
     }
 }
