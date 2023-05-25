@@ -5,7 +5,7 @@ public class Kutya
     string eredetiFajta;
     string nev;
     int eletkor;
-    DateTime utolsoEllenorzes;
+    string utolsoEllenorzes;
 
     public Kutya(string csvSor, List<string[]> nevSorok, List<string[]> fajtaSorok)
     {
@@ -17,7 +17,7 @@ public class Kutya
         this.eredetiFajta = fajtaSor[2];
         this.nev = nevSorok.Find(x => x[0] == mezok[2])[1];
         this.eletkor = Convert.ToInt32(mezok[3]);
-        this.utolsoEllenorzes = DateTime.Parse(mezok[4]);
+        this.utolsoEllenorzes = mezok[4];
     }
 
     public string Id { get => id; }
@@ -25,5 +25,5 @@ public class Kutya
     public string EredetiFajta { get => eredetiFajta; }
     public string Nev { get => nev; }
     public int Eletkor { get => eletkor; }
-    public DateTime UtolsoEllenorzes { get => utolsoEllenorzes; }
+    public string UtolsoEllenorzes { get => utolsoEllenorzes; }
 }

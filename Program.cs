@@ -13,5 +13,8 @@
 
         Kutya legidosebb = kutyak.Find(x => x.Eletkor == kutyak.Max(x => x.Eletkor));
         Console.WriteLine($"7. feladat: Legidősebb kutya neve és fajtája: {legidosebb.Nev}, {legidosebb.Fajta}");
+
+        Console.WriteLine("8. feladat: január 10.én vizsgált kutya fajták:");
+        kutyak.Where(x => x.UtolsoEllenorzes == "2018.01.10").GroupBy(x => x.Fajta).ToList().ForEach(x => Console.WriteLine($"\t{x.Key}: {x.Count()} db"));
     }
 }
